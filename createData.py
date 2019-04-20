@@ -90,14 +90,13 @@ def findChar(imgOriginal, path):
             x,y,w,h = cv2.boundingRect(char)
             img_char = new_img[y:y+h,x:x+w]
             ind += 1
-            cv2.imshow(str(ind) ,img_char)
-            cv2.imwrite('data/'+str(path)+'i'+str(ind)+'.jpg',img_char)
+            #cv2.imshow(str(ind) ,img_char)
+            cv2.imwrite('data/'+str(path)+str(ind)+'.jpg',img_char)
 
-image_dir = 'bienso'
+image_dir = 'rawData'
 count = 0
 for img in os.listdir(image_dir):
     try:
-
         count += 1
         print('Load: ', str(img))
         imgOriginal = cv2.imread(image_dir+'/'+img)
@@ -105,8 +104,10 @@ for img in os.listdir(image_dir):
         print('Done: ', img)
     except:
         print('Error: ', img)
+
+print("Created data!")
 #findChar(imgOriginal, path)
 #cv2.drawContours(new_img, listOfPossibleChars, -1, (0,255,0),3)
 #cv2.imshow('img',imgOriginal)
-cv2.waitKey(0)
+#cv2.waitKey(0)
 cv2.destroyAllWindows()

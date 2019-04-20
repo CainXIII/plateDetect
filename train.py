@@ -54,8 +54,8 @@ net.summary()
 checkpoint = ModelCheckpoint("model.h5", monitor='val_acc', verbose=1, save_best_only=True, save_weights_only=False, mode='auto', period=1)
 early = EarlyStopping(monitor='val_acc', min_delta=0, patience=10, verbose=1, mode='auto')
 net.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
-net.fit_generator(train_generator, samples_per_epoch = 1025, epochs = 50, validation_data = validation_generator,
-                        nb_val_samples = 438, callbacks = [checkpoint, early])
+net.fit_generator(train_generator, samples_per_epoch = 1639, epochs = 50, validation_data = validation_generator,
+                        nb_val_samples = 447, callbacks = [checkpoint, early])
 
 from keras.models import model_from_json
 model_json = net.to_json()

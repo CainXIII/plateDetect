@@ -2,7 +2,7 @@ import cv2, numpy as np
 from PIL import Image
 import math,sys
 path = sys.argv[1]
-imgOriginal = cv2.imread('bienso/bienso/'+path)
+imgOriginal = cv2.imread('plateData/'+path)
 name = path.split('.')[0]
 #height, width, numChannels = imgOriginal.shape
 # module
@@ -88,7 +88,7 @@ def findChar(imgOriginal):
             x,y,w,h = cv2.boundingRect(char)
             img_char = new_img[y:y+h,x:x+w]
             ind += 1
-            #cv2.imshow(str(ind) ,img_char)
+            cv2.imshow(str(ind) ,img_char)
             #cv2.imwrite('data/'+name+str(ind)+'.jpg',img_char)
 findChar(imgOriginal)
 #cv2.drawContours(new_img, listOfPossibleChars, -1, (0,255,0),3)

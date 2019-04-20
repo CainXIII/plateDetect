@@ -93,7 +93,7 @@ def findChar(imgOriginal, path):
             #cv2.imshow(str(ind) ,img_char)
             cv2.imwrite('data/'+str(path)+str(ind)+'.jpg',img_char)
 
-image_dir = 'rawData'
+image_dir = 'plateData'
 count = 0
 for img in os.listdir(image_dir):
     try:
